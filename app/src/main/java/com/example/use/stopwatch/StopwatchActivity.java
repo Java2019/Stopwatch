@@ -10,6 +10,7 @@ public class StopwatchActivity extends Activity {
 
     private int seconds = 0;
     private boolean running;
+    private boolean wasrunning;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,9 +19,28 @@ public class StopwatchActivity extends Activity {
         runTimer();
     }
 
+    @Override
+    protected void onSaveInstanceState(Bundle outState) {
+        super.onSaveInstanceState(outState);
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        wasrunning = running;
+    }
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        if (wasrunning)
+        running = true;
+    }
+
     public void onClickStart(View view){
         running = true;
     }
+
     public void OnClickStop(View view){
         running = false;
     }
