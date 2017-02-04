@@ -1,12 +1,12 @@
 package com.example.use.stopwatch;
 
-import android.os.Handler;
-import android.support.v7.app.AppCompatActivity;
+import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
 import android.view.View;
 import android.widget.TextView;
 
-public class StopwatchActivity extends AppCompatActivity {
+public class StopwatchActivity extends Activity {
 
     private int seconds = 0;
     private boolean running;
@@ -21,10 +21,10 @@ public class StopwatchActivity extends AppCompatActivity {
     public void onClickStart(View view){
         running = true;
     }
-    public void onClickStop(View view){
+    public void OnClickStop(View view){
         running = false;
     }
-    public void onClickReset(View view){
+    public void OnClickReset(View view){
         running = false;
         seconds = 0;
     }
