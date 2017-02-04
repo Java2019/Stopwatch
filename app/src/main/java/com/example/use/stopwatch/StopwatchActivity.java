@@ -16,7 +16,6 @@ public class StopwatchActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stopwatch);
         runTimer();
-        /**/
     }
 
     public void onClickStart(View view){
